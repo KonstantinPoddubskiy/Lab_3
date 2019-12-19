@@ -44,6 +44,7 @@ public class MainFrame extends JFrame {
     private JMenuItem saveToTextMenuItem;
     private JMenuItem saveToGraphicsMenuItem;
     private JMenuItem searchValueMenuItem;
+    private JMenuItem AboutProgramMenuItem;
     // Поля ввода для считывания значений переменных
     private JTextField textFieldFrom;
     private JTextField textFieldTo;
@@ -78,7 +79,17 @@ public class MainFrame extends JFrame {
         JMenu tableMenu = new JMenu("Таблица");
 // Добавить его в главное меню
         menuBar.add(tableMenu);
+// Добавить пункт меню "Справка"
+        JMenu helpMenu = new JMenu("Справка");
+        menuBar.add(helpMenu);
+// Добавление "О программе"
+   Action AboutProgramAction = new AbstractAction("О программе") {
+       public void actionPerformed(ActionEvent event) {
+           JOptionPane.showMessageDialog(MainFrame.this, "Автор: Поддубский Константин, 10-я группа ");
+       }
+ };
 
+        AboutProgramMenuItem = helpMenu.add(AboutProgramAction);
         Action saveToTextAction = new AbstractAction("Сохранить в текстовый файл") {
 
             public void actionPerformed(ActionEvent event) {
