@@ -1,5 +1,6 @@
 package bsu.rfikt.Lab__3;
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -79,17 +80,23 @@ public class MainFrame extends JFrame {
         JMenu tableMenu = new JMenu("Таблица");
 // Добавить его в главное меню
         menuBar.add(tableMenu);
-// Добавить пункт меню "Справка"
+        // Добавить "Справка"
         JMenu helpMenu = new JMenu("Справка");
         menuBar.add(helpMenu);
-// Добавление "О программе"
-   Action AboutProgramAction = new AbstractAction("О программе") {
-       public void actionPerformed(ActionEvent event) {
-           JOptionPane.showMessageDialog(MainFrame.this, "Автор: Поддубский Константин, 10-я группа ");
-       }
- };
+        // Добавление "О программе"
+        Action AboutProgramAction = new AbstractAction("О программе") {
 
+            public void actionPerformed(ActionEvent event) {
+                JOptionPane.showMessageDialog(MainFrame.this, "Автор: Поддубский" +
+                        ", 10-я группа ");
+            }
+
+
+        };
         AboutProgramMenuItem = helpMenu.add(AboutProgramAction);
+// Создать новое "действие" по сохранению в текстовый файл
+
+
         Action saveToTextAction = new AbstractAction("Сохранить в текстовый файл") {
 
             public void actionPerformed(ActionEvent event) {
